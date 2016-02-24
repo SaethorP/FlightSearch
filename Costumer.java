@@ -79,6 +79,10 @@ public class Costumer {
 		
 	}
 	
+	void EditFlight(Costumer costumer, Flights flight, boolean extraLuggage )
+	{
+		
+	}
 	
 	//Testing area for the class. 
 	public static void main(String[] args){

@@ -25,6 +25,11 @@ public class Flights {
 //	public int[] GetFlightsIds(Date time, int price, String destination, Airport airport) {}
 //	
 	
+	public void EditPrice(int price)
+	{
+		
+	}
+	
 	//Testing area for the class. 
 	public static void main(String[] args){
 		
