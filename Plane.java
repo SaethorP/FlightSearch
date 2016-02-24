@@ -50,7 +50,7 @@ public class Plane {
 		planeType = type;
 	}
 	
-	void SetPlaneSeats(int seatNr, int seatRow, boolean free)
+	void SetPlaneSeats(int seatNr, int seatRow, boolean occupied)
 	{
 		
 	}
