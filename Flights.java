@@ -1,5 +1,5 @@
 import java.util.Date;
-import java.sql.*;
+
 
 public class Flights {
 	
@@ -11,6 +11,8 @@ public class Flights {
 	private String _to; 
 	private String _from;
 	private double _price;
+	
+	
 	
 	public void GetFlightById(int flightId) {}
 	public void GetFlightsById(int[] flightIds) {}
