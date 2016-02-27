@@ -1,5 +1,5 @@
 import java.util.Date;
-
+import java.sql.*;
 
 public class Flights {
 	
@@ -16,14 +16,14 @@ public class Flights {
 	public void GetFlightsById(int[] flightIds) {}
 	public void GetFlightsByCostumerId(int costumerId) {}
 	
-//	public int[] GetFlightsIds(Date time ) { }
-//	public int[] GetFlightsIds(int price ) {}
-//	public int[] GetFlightsIds(String destination ) {}
-//	
-//	public int[] GetFlightsIds(Date time, int price ) {}
-//	public int[] GetFlightsIds(Date time, int price, String destination) {}
-//	public int[] GetFlightsIds(Date time, int price, String destination, Airport airport) {}
-//	
+	public int[] GetFlightsIds(Date time ) { return new int[0]; }
+	public int[] GetFlightsIds(int price ) { return new int[0];}
+	public int[] GetFlightsIds(String destination ) { return new int[0]; }
+	
+	public int[] GetFlightsIds(Date time, int price ) { return new int[0]; }
+	public int[] GetFlightsIds(Date time, int price, String destination) { return new int[0]; }
+	public int[] GetFlightsIds(Date time, int price, String destination, Airport airport) { return new int[0]; }
+	
 	
 	public void EditPrice(int price)
 	{
