@@ -17,3 +17,4 @@ public class JDBCExample {
       System.out.println("Opened database successfully");
    }
 }
+	
