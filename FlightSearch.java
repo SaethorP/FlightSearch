@@ -17,7 +17,7 @@ public class FlightSearch {
 	
 	//Testing area for the class. 
 			public static void main(String[] args){
-				Costumer costumer = new Costumer();
+				Customer costumer = new Customer();
 				
 				System.out.println( costumer.GetCostumerId() );
 			}
