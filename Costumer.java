@@ -9,7 +9,7 @@ public class Costumer {
 	// Default constructor.
 	Costumer()
 	{
-		costumerId = (int)Math.random()*101;
+		costumerId = 10;
 		costumerName = "Jón Jónsson";
 		costumerAge  = 25;
 		costumerSSN  = 1234567890;
