@@ -41,4 +41,48 @@ public class FlightSearchTest {
 		fail("Not yet implemented");
 	}
 
+	@Test
+	public void getFlightSearchIdstest() {
+		fail("Not yet implemented");
+	}
+	
+	@Test
+	public void getFlightSearchByIdtest() {
+		fail("Not yet implemented");
+	}
+	
+	@Test
+	public void getFlightByCustomerIdtest() {
+		fail("Not yet implemented");
+	}
+	
+	@Test
+	public void editPricetest() {
+		fail("Not yet implemented");
+	}
+	
+	@Test
+	public void orderFlighttest() {
+		fail("Not yet implemented");
+	}
+	
+	@Test
+	public void seeMyFlightstest() {
+		fail("Not yet implemented");
+	}
+	
+	@Test
+	public void cancelFlighttest() {
+		fail("Not yet implemented");
+	}
+	
+	@Test
+	public void editFlighttest() {
+		fail("Not yet implemented");
+	}
+	
+	@Test
+	public void getCostumerByFlightIdtest() {
+		fail("Not yet implemented");
+	}
 }
