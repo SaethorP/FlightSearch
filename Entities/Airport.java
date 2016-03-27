@@ -17,7 +17,7 @@ public class Airport {
 				
 		}
 		
-		//Costum constructor
+		//Customer constructor
 		public Airport(int id, String name, String country, String city) 
 		{
 			_airportId = id; //Unset airport Id is zero

@@ -7,29 +7,39 @@ import Entities.Flight;
 import Entities.Plane;
 
 public class DatabaseMFlight implements IDataBaseMFlight {
+	
+	IDataBaseMFlight manager; 
 
+	public IDataBaseMFlight getManager() {
+		return manager;
+	}
+
+	public void setManager(IDataBaseMFlight manager) {
+		this.manager = manager;
+	}
+	
 	@Override
 	public Flight getFlight(int flightId) {
 		// TODO Auto-generated method stub
-		return null;
+		return manager.getFlight(flightId);
 	}
 
 	@Override
 	public Airport getAirport(int airportId) {
 		// TODO Auto-generated method stub
-		return null;
+		return manager.getAirport(airportId);
 	}
 
 	@Override
 	public Customer getCustomer(int CostumerId) {
 		// TODO Auto-generated method stub
-		return null;
+		return manager.getCustomer(CostumerId);
 	}
 
 	@Override
 	public Plane getPlane(int planeId) {
 		// TODO Auto-generated method stub
-		return null;
+		return manager.getPlane(planeId);
 	}
 
 	@Override

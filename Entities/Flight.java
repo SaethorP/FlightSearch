@@ -38,17 +38,17 @@ public class Flight {
 	}
 	
 	
-	Flight(int flightId, Date arrive, Date departure, Plane plane, Airport[] airports, int[] customers)
+	public Flight(int flightId, Date arrive, Date departure, Plane plane, Airport[] airports, int[] customers, double price)
 	{
 		_flightId = flightId; 
 		_arrive = arrive; 
 		_departure = departure; 
 		_plane = plane; 
 		_airports = airports; 
-		_to = airports[1].GetAirportCountry();
-		_from = airports[0].GetAirportCountry();
+		_to = airports[1].GetAirportCity();
+		_from = airports[0].GetAirportCity();
 		_customers = customers;
-		_price = 0;
+		_price = price;
 	}
 	
 	// Getters and setters for flight.
