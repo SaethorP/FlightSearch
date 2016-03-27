@@ -14,7 +14,28 @@ public class Flight {
 	private String _from;
 	private double _price;
 	private int[] _customers;
+	private Airport airport1, airport2;
 	
+	//Default constructor
+	public Flight(){
+		airport1 = new Airport();
+		airport2 = new Airport();
+		_airports = new Airport[2];
+		_airports[0] = airport1;
+		_airports[1] = airport2;
+		
+		_flightId = 123; 
+		_arrive = new Date(); 
+		_departure = new Date(); 
+		_plane = new Plane();  
+		_to = "Akureyri";
+		_from = "Reykjavik";
+		_customers = new int[2];
+		_customers[0] = 1;
+		_customers[2] = 2;
+		
+		_price = 100;
+	}
 	
 	
 	Flight(int flightId, Date arrive, Date departure, Plane plane, Airport[] airports, int[] customers)
