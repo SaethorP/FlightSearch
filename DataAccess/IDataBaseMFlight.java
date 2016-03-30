@@ -9,7 +9,7 @@ import Entities.Plane;
 
 public interface IDataBaseMFlight {
 	
-	public Flight getFlight(int flightId);
+	public Flight getFlight(String flightId);
 	public Airport getAirport(int airportId);
 	public Customer getCustomer(int CostumerId);
 	public Plane getPlane(int planeId);

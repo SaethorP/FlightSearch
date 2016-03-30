@@ -7,8 +7,8 @@ import Entities.Customer;
 import Entities.Flight;
 
 public interface IFlightSearch {
-	public Flight GetFlightById(int flightId);
-	public Flight[] GetFlightsById(int[] flightIds);
+	public Flight GetFlightById(String flightId);
+	public Flight[] GetFlightsById(String[] flightIds);
 	public Flight[] GetFlightsByCostumerId(int costumerId);
 	
 	public int[] GetFlightsIds(Date time );

@@ -19,8 +19,16 @@ public class DatabaseMFlight implements IDataBaseMFlight {
 	}
 	
 	@Override
-	public Flight getFlight(int flightId) {
+	public Flight getFlight(String flightId) {
 		// TODO Auto-generated method stub
+		
+//		Flight returnflight = new Flight();
+//		
+//		flightInfo info = "Select id, date, airport FROM WHERE "
+//		
+//		Airport airport = getAirport(info.AirportId);
+		
+		
 		return manager.getFlight(flightId);
 	}
 

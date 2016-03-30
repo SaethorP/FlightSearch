@@ -5,7 +5,7 @@ import java.util.Date;
 public class Flight {
 	
 	//Variables that start with _varible are private variables. 
-	private int _flightId;
+	private String _flightId;
 	private Date _arrive;
 	private Date _departure;
 	private Plane _plane;
@@ -24,7 +24,7 @@ public class Flight {
 		_airports[0] = airport1;
 		_airports[1] = airport2;
 		
-		_flightId = 123; 
+		_flightId = "123"; 
 		_arrive = new Date(); 
 		_departure = new Date(); 
 		_plane = new Plane();  
@@ -38,7 +38,7 @@ public class Flight {
 	}
 	
 	
-	public Flight(int flightId, Date arrive, Date departure, Plane plane, Airport[] airports, int[] customers, double price)
+	public Flight(String flightId, Date arrive, Date departure, Plane plane, Airport[] airports, int[] customers, double price)
 	{
 		_flightId = flightId; 
 		_arrive = arrive; 
@@ -53,7 +53,7 @@ public class Flight {
 	
 	// Getters and setters for flight.
 	
-	public int getFlightId(){	return _flightId; }
+	public String getFlightId(){	return _flightId; }
 	public Date getArriveDate(){	return _arrive; }
 	public Date getDepartureDate(){ return _departure; }
 	public Plane getPlane(){ return _plane; }
@@ -63,7 +63,7 @@ public class Flight {
 	public int[] GetCustomers(){ return _customers; }
 	public double GetPrice(){ return _price; }
 	
-	public void setFlightId(int flightId){ _flightId = flightId; }
+	public void setFlightId(String flightId){ _flightId = flightId; }
 	public void setArriveDate(Date arrive){_arrive = arrive;}
 	public void setDepartureDate(Date departure){ _departure = departure; }
 	public void setPlane(Plane plane){ _plane = plane; }

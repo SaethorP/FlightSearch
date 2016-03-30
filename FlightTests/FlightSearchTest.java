@@ -9,36 +9,33 @@ import Entities.Customer;
 import Entities.Airport;
 import Entities.Flight;
 import Entities.Plane;
+import Model.IFlightSearch;
+import Model.MockFlightSearch;
 
 public class FlightSearchTest {
 	//Arrange
-	private Customer customer1;
-	private Airport airport1, airport2;
-	private Flight flight1;
-	private Plane plane1;
+	private IFlightSearch mockSearch;
 	
 	@Before
 	public void setUp() throws Exception {
-		customer1 = new Customer();
-		airport1 = new Airport();
-		airport2 = new Airport();
-		flight1 = new Flight();
-		plane1 = new Plane();
+		
+		
 		
 	}
 
 	@After
 	public void tearDown() throws Exception {
-		customer1 = null;
-		airport1 = null;
-		airport2 = null;
-		flight1 = null;
-		plane1 = null;
+		mockSearch = null; 
 	}
 
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void GetFlightById_Successs() {
+		IFlightSearch mockSearch = new MockFlightSearch(); 
+		Flight actualFlight = mockSearch.GetFlightById("123456");
+				
+		assertNotNull(actualFlight);
+		
+		
 	}
 
 	@Test

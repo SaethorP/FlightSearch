@@ -21,7 +21,7 @@ public class SearchTest {
 	@Before
 	public void setUp()
 	{
-		int flightId = 10;
+		String flightId = "10";
 		Date departure = new Date();
 		Date arrive = new Date();
 		Plane plane = new Plane(666, "HellPlane", "[000],[000],[000],[000]");
@@ -34,10 +34,12 @@ public class SearchTest {
 		Flight mockFlight = new Flight(flightId, departure, arrive, plane, airports, customers, price);
 		
 		IDataBaseMFlight IManager = mock(IDataBaseMFlight.class);
-		when(IManager.getFlight(10)).thenReturn(mockFlight);
-		 
+		
+		when(IManager.getFlight("10")).thenReturn(mockFlight);		
+		
 		DataManager = new DatabaseMFlight();
 		DataManager.setManager(IManager);
+		
 	}
 	// Act
 	@After 
@@ -56,7 +58,7 @@ public class SearchTest {
 	public void MockTest_GetFlightById()
 	{
 		// actual
-		Flight actualFlight = DataManager.getFlight(10);
+		Flight actualFlight = DataManager.getFlight("10");
 		Airport[] actualAirports = actualFlight.getAirports();
 		Plane actualPlane = actualFlight.getPlane();
 		
@@ -80,6 +82,8 @@ public class SearchTest {
 		
 		
 	}
+	
+	
 	
      
         

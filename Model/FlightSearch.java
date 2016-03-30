@@ -3,30 +3,39 @@ import java.util.Date;
 
 import DataAccess.IDataBaseMFlight;
 import Entities.Airport;
-import Entities.Customer;
+import Entities.Customer;	
 import Entities.Flight;
 
 public class FlightSearch implements IFlightSearch{
 	
-	IFlightSearch searcher; 
+	private IDataBaseMFlight manager;
+	private IFlightSearch searcher; 
+	
 
-	public IFlightSearch getSearch() {
-		return searcher;
-	}
-
-	public void setManager(IFlightSearch searcher) {
+	public FlightSearch(IFlightSearch searcher, IDataBaseMFlight manager)
+	{
+		this.manager = manager; 
 		this.searcher = searcher;
 	}
 	
+	
+//	public IFlightSearch getSearch() {
+//		return searcher;
+//	}
+//
+//	public void setManager(IFlightSearch searcher) {
+//		this.searcher = searcher;
+//	}
+	
 	@Override
-	public Flight GetFlightById(int flightId) {
-		// TODO Auto-generated method stub
+	public Flight GetFlightById(String flightId) {
+		
 		return searcher.GetFlightById(flightId);
 	}
 
 	@Override
-	public Flight[] GetFlightsById(int[] flightIds) {
-		// TODO Auto-generated method stub
+	public Flight[] GetFlightsById(String[] flightIds) {
+		
 		return searcher.GetFlightsById(flightIds);
 	}
 
