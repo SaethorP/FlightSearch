@@ -1,11 +1,9 @@
 package FlightTests;
 
 import static org.junit.Assert.*;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
 import DataAccess.*;
 import Entities.Customer;
 import Entities.Airport;
@@ -35,49 +33,31 @@ public class FlightSearchTest {
 
 	@Test
 	public void getFlightById_ValidInput() {
-		
 		Flight actualFlight = flightSearch.GetFlightById("123456");
-				
 		assertNotNull(actualFlight);
-			
 	}
 
 	@Test
 	public void getFlightById_Invalid_ToLongInput() {
-		
 		Flight actualFlight = flightSearch.GetFlightById("486489468498498498");
-		
 		assertEquals(null,actualFlight);
-	
 	}
 	
 	@Test
 	public void getFlightById_Invalid_ToShortInput() {
-		
 		Flight actualFlight = flightSearch.GetFlightById("486");
-		
 		assertEquals(null,actualFlight);
-	
 	}
 	
 	@Test
 	public void getFlightById_Invalid_EmptyString() {
-		
 		Flight actualFlight = flightSearch.GetFlightById("");
-		
 		assertEquals(null,actualFlight);
-	
 	}
 	
 	@Test
 	public void getFlightById_Invalid_CharacterInput() {
-		
 		Flight actualFlight = flightSearch.GetFlightById("Prumpi");
-		
 		assertEquals(null,actualFlight);
-	
 	}
-	
-	
-	
 }
