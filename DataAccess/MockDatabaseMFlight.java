@@ -58,25 +58,28 @@ public class MockDatabaseMFlight implements IDataBaseMFlight {
 	public void setFlight(int flightId, Date arrive, Date departure, Plane plane, Airport[] airport, String[] ToFrom,
 			Double price, int[] costumerId) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void setAirport(int airportId, String city, String country, String name) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void setCustomer(int costumerId, String name, int Age, int SSN) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void setPlane(int planeId, String planeType, String seats) {
 		// TODO Auto-generated method stub
-		
 	}
 
+	@Override
+	public String orderFlight(String FlightId, String CustomerId) {
+		// TODO Auto-generated method stub
+		if(FlightId == null){return "FlightId Invalid, unable to order flight";};
+		if(CustomerId == null){return "CustomerId Invalid, unable to order flight";};
+		return "Order for flight" + FlightId + "Complete";
+	}	
 }

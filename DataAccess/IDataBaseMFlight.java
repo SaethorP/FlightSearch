@@ -19,4 +19,6 @@ public interface IDataBaseMFlight {
 	void setCustomer(int costumerId, String name, int Age, int SSN);
 	void setPlane(int planeId, String planeType, String seats);
 	
+	String orderFlight(String FlightId, String CustomerId);
+	
 }
