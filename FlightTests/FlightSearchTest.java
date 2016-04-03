@@ -60,4 +60,49 @@ public class FlightSearchTest {
 		Flight actualFlight = flightSearch.GetFlightById("Prumpi");
 		assertEquals(null,actualFlight);
 	}
+	
+	@Test
+	public void orderFlight_Success_ValidInput(){
+		String successString = flightSearch.OrderFlight("03088822", "123456");
+		assertEquals("Success", successString);
+	}
+	
+	@Test
+	public void orderFlight_FAIL_CustosmerIsEmpty(){
+		String successString = flightSearch.OrderFlight("", "123456");
+		assertEquals(null, successString);
+	}
+	
+	@Test
+	public void orderFlight_FAIL_FlightIdIsEmpty(){
+		String successString = flightSearch.OrderFlight("03088822", "");
+		assertEquals(null, successString);
+	}
+	
+	@Test
+	public void orderFlight_FAIL_InvalidCostumerLenghtToLong(){
+		String successString = flightSearch.OrderFlight("03088822212121", "123456");
+		assertEquals(null, successString);
+	}
+	
+	@Test
+	public void orderFlight_FAIL_InvalidCostumerFlightIdLengthToLong(){
+		String successString = flightSearch.OrderFlight("03088822", "12345631321");
+		assertEquals(null, successString);
+	}
+	
+	@Test
+	public void orderFlight_FAIL_InvalidCostumerCustomerLengthToShort(){
+		String successString = flightSearch.OrderFlight("0308", "123456");
+		assertEquals(null, successString);
+	}
+	
+	@Test
+	public void orderFlight_FAIL_InvalidCostumerFlightIdLengthToShort(){
+		String successString = flightSearch.OrderFlight("03088822", "1234");
+		assertEquals(null, successString);
+	}
+
+	
+	
 }

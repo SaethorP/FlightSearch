@@ -33,6 +33,17 @@ public class FlightSearch implements IFlightSearch{
 			return null;
 		}
 	}
+	
+	@Override
+	public String OrderFlight(String costumerId, String flightId) {
+		// TODO Auto-generated method stub
+		if (flightId.length() != 6 || !isNumeric(flightId) || flightId == ""){ return null; };
+		if (costumerId.length() != 8 || !isNumeric(costumerId) || costumerId == "") { return null; };
+		
+		if(costumerId != null && flightId != null){return manager.orderFlight(flightId, costumerId);};
+		
+		return null;
+	}
 
 	@Override
 	public Flight[] GetFlightsById(String[] flightIds) {
@@ -82,12 +93,6 @@ public class FlightSearch implements IFlightSearch{
 		return null;
 	}
 
-	@Override
-	public String OrderFlight(String costumerid, String flight) {
-		// TODO Auto-generated method stub
-		if(costumerid != null && flight != null){return manager.orderFlight(flight, costumerid);};
-		return "Invalid input";
-	}
 
 	@Override
 	public void SeeMyFlights(Customer costumer) {

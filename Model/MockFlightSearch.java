@@ -85,11 +85,7 @@ public class MockFlightSearch implements IFlightSearch {
 		return null;
 	}
 
-	@Override
-	public void OrderFlight(Customer costumer, Flight flight) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 	@Override
 	public void SeeMyFlights(Customer costumer) {
@@ -107,6 +103,12 @@ public class MockFlightSearch implements IFlightSearch {
 	public void EditFlight(Customer costumer, Flight flight, boolean extraLuggage) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public String OrderFlight(String costumer, String flight) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

@@ -19,7 +19,7 @@ public interface IFlightSearch {
 	public int[] GetFlightsIds(Date time, int price, String destination);
 	public int[] GetFlightsIds(Date time, int price, String destination, Airport airport);
 
-	String OrderFlight(String costumer, String flight);
+	String OrderFlight(String costumerId, String flightId);
 	void SeeMyFlights(Customer costumer);
 	void CancelFlight(Customer costumer, Flight flight);
 	void EditFlight(Customer costumer, Flight flight, boolean extraLuggage );
