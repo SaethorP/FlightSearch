@@ -5,80 +5,81 @@ import DataAccess.IDataBaseMFlight;
 import Entities.Airport;
 import Entities.Customer;	
 import Entities.Flight;
+import Entities.Plane;
+import FlightTests.ObjectEqualMethods;
 
 public class FlightSearch implements IFlightSearch{
 	
 	private IDataBaseMFlight manager;
-	private IFlightSearch searcher; 
 	
 
-	public FlightSearch(IFlightSearch searcher, IDataBaseMFlight manager)
+	public FlightSearch(IDataBaseMFlight manager)
 	{
 		this.manager = manager; 
-		this.searcher = searcher;
 	}
-	
-	
-//	public IFlightSearch getSearch() {
-//		return searcher;
-//	}
-//
-//	public void setManager(IFlightSearch searcher) {
-//		this.searcher = searcher;
-//	}
+
 	
 	@Override
 	public Flight GetFlightById(String flightId) {
 		
-		return searcher.GetFlightById(flightId);
+		if (flightId.length() != 6 && isNumeric(flightId)){ return null; };
+		
+		if (flightId.length() == 6)
+		{
+			return manager.getFlight(flightId);
+		}
+		else 
+		{
+			return null;
+		}
 	}
 
 	@Override
 	public Flight[] GetFlightsById(String[] flightIds) {
 		
-		return searcher.GetFlightsById(flightIds);
+		return null;
 	}
 
 	@Override
 	public Flight[] GetFlightsByCostumerId(int costumerId) {
 		// TODO Auto-generated method stub
-		return searcher.GetFlightsByCostumerId(costumerId);
+		return null;
 	}
 
 	@Override
 	public int[] GetFlightsIds(Date time) {
 		// TODO Auto-generated method stub
-		return searcher.GetFlightsIds(time);
+		return null;
 	}
 
 	@Override
 	public int[] GetFlightsIds(int price) {
 		// TODO Auto-generated method stub
-		return searcher.GetFlightsIds(price);
+		return null;
 	}
 
 	@Override
 	public int[] GetFlightsIds(String destination) {
 		// TODO Auto-generated method stub
-		return searcher.GetFlightsIds(destination);
+		return null;
 	}
 
 	@Override
 	public int[] GetFlightsIds(Date time, int price) {
 		// TODO Auto-generated method stub
-		return searcher.GetFlightsIds(time, price);
+		return null;
 	}
 
 	@Override
 	public int[] GetFlightsIds(Date time, int price, String destination) {
 		// TODO Auto-generated method stub
-		return searcher.GetFlightsIds(time, price, destination);
+		return null;
 	}
 
 	@Override
 	public int[] GetFlightsIds(Date time, int price, String destination, Airport airport) {
 		// TODO Auto-generated method stub
-		return searcher.GetFlightsIds(time, price, destination, airport);
+		return null;
 	}
 
 	@Override
@@ -103,6 +104,19 @@ public class FlightSearch implements IFlightSearch{
 	public void EditFlight(Customer costumer, Flight flight, boolean extraLuggage) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	public boolean isNumeric(String str)  
+	{  
+	  try  
+	  {  
+	    int i = Integer.parseInt(str);  
+	  }  
+	  catch(NumberFormatException nfe)  
+	  {  
+	    return false;  
+	  }  
+	  return true;  
 	}
 
 	//Testing area for the class. 

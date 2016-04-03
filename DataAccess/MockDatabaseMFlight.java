@@ -9,12 +9,31 @@ import Entities.Plane;
 
 public class MockDatabaseMFlight implements IDataBaseMFlight {
 	
-	private Flight mock = new Flight();
 	
 	@Override
-	public Flight getFlight(int flightId) {
+	public Flight getFlight(String flightId) {
 		// TODO Auto-generated method stub
-		return null;
+		
+		if (flightId == "123456")
+		{
+			Date departure = new Date();
+			Date arrive = new Date();
+			Plane plane = new Plane(666, "HellPlane", "[000],[000],[000],[000]");
+			Airport toAirport = new Airport(101, "Reykjavíkur Flugvöllur", "Iceland", "Reykjavík");
+			Airport fromAirport = new Airport(900, "Flugvöllur Vestmannaeyja", "Iceland", "Vestmannaeyjar");
+			Airport[] airports = {fromAirport, toAirport};
+			int[] customers = {1,2,3,4,5,6,7,8,9,10}; 
+			double price = 1000.00;
+			
+			Flight mockFlight = new Flight(flightId, departure, arrive, plane, airports, customers, price);
+			
+			return mockFlight;
+		}
+		else 
+		{
+			return null;
+		}
+		
 	}
 
 	@Override
