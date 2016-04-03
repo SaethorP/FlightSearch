@@ -83,9 +83,10 @@ public class FlightSearch implements IFlightSearch{
 	}
 
 	@Override
-	public void OrderFlight(Customer costumer, Flight flight) {
+	public String OrderFlight(String costumerid, String flight) {
 		// TODO Auto-generated method stub
-		
+		if(costumerid != null && flight != null){return manager.orderFlight(flight, costumerid);};
+		return "Invalid input";
 	}
 
 	@Override

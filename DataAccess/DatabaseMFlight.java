@@ -74,5 +74,11 @@ public class DatabaseMFlight implements IDataBaseMFlight {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public String orderFlight(String FlightId, String CustomerId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

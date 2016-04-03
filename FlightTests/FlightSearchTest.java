@@ -13,7 +13,6 @@ import Entities.Flight;
 import Entities.Plane;
 import Model.FlightSearch;
 import Model.IFlightSearch;
-import Model.MockFlightSearch;
 
 public class FlightSearchTest {
 	
