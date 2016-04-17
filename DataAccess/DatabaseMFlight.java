@@ -33,8 +33,9 @@ public class DatabaseMFlight implements IDataBaseMFlight {
 
 		      //statement.executeUpdate("UPDATE person SET name='Peter' WHERE id='1'");
 		      //statement.executeUpdate("DELETE FROM person WHERE id='1'");
-
-		        ResultSet resultSet = statement.executeQuery("SELECT * from Flights");
+		      	String query = "SELECT * from Flights WHERE Fra = '" + from + "'";
+		      	
+		        ResultSet resultSet = statement.executeQuery(query);
 		        while(resultSet.next())
 		        {
 		           // iterate & read the result set
