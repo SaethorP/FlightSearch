@@ -4,7 +4,7 @@ public class Validate {
 
 	public boolean validateFrom(String from)
 	{
-		String fra [] = {"Reykjavik","Akureyri","Ísafjörður","Egilsstaðir"};
+		String fra [] = {"Reykjavík","Akureyri","Ísafjörður","Egilsstaðir"};
 		boolean check = false;
 		
 		for(int i=0;i<fra.length;i++)
@@ -18,7 +18,7 @@ public class Validate {
 	
 	public boolean validateTo(String To)
 	{
-		String til [] = {"Reykjavik","Akureyri","Ísafjörður","Egilsstaðir"};
+		String til [] = {"Reykjavík","Akureyri","Ísafjörður","Egilsstaðir"};
 		boolean check = false;
 		
 		for(int i=0;i<til.length;i++)
