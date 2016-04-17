@@ -37,7 +37,7 @@ public class Flight {
 	public Date getDepartureDate(){ return _departure; }
 	public String getWhereTo(){ return _to; }
 	public String getWhereFrom(){ return _from; }
-	public double GetPrice(){ return _price; }
+	public double getPrice(){ return _price; }
 	public int getemptyseats(){return _emptyseats;}
 	
 	public void setDepartureDate(Date departure){ _departure = departure; }
