@@ -34,7 +34,7 @@ public class FlightSearchIntegrationTest {
 	
 	@Test
 	public void getAllFlights() {
-		Flight[] actualFlight = flightSearch.GetFlightsBy("Reykjavík");
+		Flight[] actualFlight = flightSearch.GetFlightsBy("Reykjavik");
 		assertNotNull(actualFlight);
 	}
 

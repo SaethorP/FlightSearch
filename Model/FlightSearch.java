@@ -7,15 +7,17 @@ import Entities.Customer;
 import Entities.Flight;
 import Entities.Plane;
 import FlightTests.ObjectEqualMethods;
+import Model.Validate;
 
 public class FlightSearch implements IFlightSearch{
 	
 	private IDataBaseMFlight manager;
-	
+	private Validate validate;
 
 	public FlightSearch(IDataBaseMFlight manager)
 	{
 		this.manager = manager; 
+		this.validate = new Validate();
 	}
 
 	
@@ -54,10 +56,18 @@ public class FlightSearch implements IFlightSearch{
 		
 		if (to == null && date == null)
 		{
+			boolean check = validate.validateFrom(from);
+			
+			if (!check) throw new IllegalArgumentException("The argument is not legal.");
+			
 			Flight[] resultFlights = manager.getFlights(from);
 		} 
 		else if (to == null)
 		{
+			boolean check = validate.validateFrom(from) && validate.validateTo(to);
+			
+			if (!check) throw new IllegalArgumentException("The argument is not legal.");
+			
 			Flight[] resultFlights = manager.getFlights(from, to);
 		}
 		else 
