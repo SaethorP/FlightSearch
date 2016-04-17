@@ -66,13 +66,96 @@ public class DatabaseMFlight implements IDataBaseMFlight {
 	@Override
 	public Flight[] getFlights(String from, String to) {
 		// TODO Auto-generated method stub
+		
+				//Class.forName("org.sqlite.JDBC");
+
+				   Connection connection = null;
+				   try
+				   {
+				      // create a database connection
+				      connection = DriverManager.getConnection("jdbc:sqlite:Flights.db");
+
+				      Statement statement = connection.createStatement();
+				      statement.setQueryTimeout(30);  // set timeout to 30 sec.
+
+
+				      //statement.executeUpdate("UPDATE person SET name='Peter' WHERE id='1'");
+				      //statement.executeUpdate("DELETE FROM person WHERE id='1'");
+				      	String query = "SELECT * from Flights WHERE fra = '" + from + "' AND Til = '" + to +"'";
+				      	
+				        ResultSet resultSet = statement.executeQuery(query);
+				        while(resultSet.next())
+				        {
+				           // iterate & read the result set
+				           System.out.println("Id = " + resultSet.getInt("Id"));
+				           System.out.println("Date = " + resultSet.getString("Date"));
+				           System.out.println("From = " + resultSet.getString("Fra"));
+				           System.out.println("To = " + resultSet.getString("Til"));
+				           System.out.println("EmptySeats = " + resultSet.getString("EmptySeats"));
+
+				        }
+				       }
+
+				  catch(SQLException e){  System.err.println(e.getMessage()); }       
+				   finally {         
+				         try {
+				               if(connection != null)
+				                  connection.close();
+				               }
+				         catch(SQLException e) {  // Use SQLException class instead.          
+				            System.err.println(e); 
+				          }
+				   }
+				
 		return null;
 	}
 
 	@Override
 	public Flight[] getFlights(String from, String to, String date) {
 		// TODO Auto-generated method stub
-		return null;
+		
+				//Class.forName("org.sqlite.JDBC");
+
+				   Connection connection = null;
+				   try
+				   {
+				      // create a database connection
+				      connection = DriverManager.getConnection("jdbc:sqlite:Flights.db");
+
+				      Statement statement = connection.createStatement();
+				      statement.setQueryTimeout(30);  // set timeout to 30 sec.
+
+
+				      //statement.executeUpdate("UPDATE person SET name='Peter' WHERE id='1'");
+				      //statement.executeUpdate("DELETE FROM person WHERE id='1'");
+				      	String query = "SELECT * from Flights WHERE Fra = '" + from + "'AND Til = '" + to +"' AND Date = '" + date +"'";
+				      	
+				        ResultSet resultSet = statement.executeQuery(query);
+				        while(resultSet.next())
+				        {
+				           // iterate & read the result set
+				           System.out.println("Id = " + resultSet.getInt("Id"));
+				           System.out.println("Date = " + resultSet.getString("Date"));
+				           System.out.println("From = " + resultSet.getString("Fra"));
+				           System.out.println("To = " + resultSet.getString("Til"));
+				           System.out.println("EmptySeats = " + resultSet.getString("EmptySeats"));
+
+				        }
+				       }
+
+				  catch(SQLException e){  System.err.println(e.getMessage()); }       
+				   finally {         
+				         try {
+				               if(connection != null)
+				                  connection.close();
+				               }
+				         catch(SQLException e) {  // Use SQLException class instead.          
+				            System.err.println(e); 
+				          }
+				   }
+				
+				
+				return null;
 	}
 
 	IDataBaseMFlight manager; 

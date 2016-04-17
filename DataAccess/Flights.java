@@ -28,7 +28,7 @@ public class Flights
       statement.executeUpdate("CREATE TABLE Flights (Id INTEGER, Fra STRING, Til STRING, Date STRING, EmptySeats INTEGER)");
 
       int ids [] = {1,2,3,4,5,6,7,8,9,10,11,12};
-      String fra [] = {"Reykjavik","Akureyri","Ísafjörður","Egilsstaðir","Akureyri","Ísafjörður","Egilsstaðir", "Reykjavík","Akureyri","Ísafjörður","Reykjavík", "Reykjavík"};
+      String fra [] = {"Reykjavík","Akureyri","Ísafjörður","Egilsstaðir","Akureyri","Ísafjörður","Egilsstaðir", "Reykjavík","Akureyri","Ísafjörður","Reykjavík", "Reykjavík"};
       String til [] = {"Akureyri","Reykjavík","Egilsstaðir","Ísafjörður","Reykjavík","Akureyri","Reykjavík","Egilsstaðir","Reykjavík","Reykjavík","Egilsstaðir", "Akureyri"};
       String date [] = {"1/6/2016","1/6/2016","2/6/2016","2/6/2016","3/6/2016","4/6/2016","4/6/2016","5/6/2016","5/6/2016","6/6/2016","7/6/2016","8/6/2016","9/6/2016","10/6/2016"};
       String emptySeats [] = {"10", "10","10","10", "10","10","10", "10","10","10", "10","10"};

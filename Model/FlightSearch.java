@@ -62,7 +62,7 @@ public class FlightSearch implements IFlightSearch{
 			
 			Flight[] resultFlights = manager.getFlights(from);
 		} 
-		else if (to == null)
+		else if (date == null)
 		{
 			boolean check = validate.validateFrom(from) && validate.validateTo(to);
 			
