@@ -37,6 +37,26 @@ public class MockFlightSearch implements IFlightSearch {
 		}
 	}
 
+
+	@Override
+	public Flight[] GetFlightsBy(String from) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Flight[] GetFlightsBy(String from, String to) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Flight[] GetFlightsBy(String from, String to, String date) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
 	@Override
 	public Flight[] GetFlightsById(String[] flightIds) {
 		// TODO Auto-generated method stub
@@ -48,45 +68,7 @@ public class MockFlightSearch implements IFlightSearch {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	@Override
-	public int[] GetFlightsIds(Date time) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int[] GetFlightsIds(int price) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int[] GetFlightsIds(String destination) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int[] GetFlightsIds(Date time, int price) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int[] GetFlightsIds(Date time, int price, String destination) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int[] GetFlightsIds(Date time, int price, String destination, Airport airport) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	
-
 	@Override
 	public void SeeMyFlights(Customer costumer) {
 		// TODO Auto-generated method stub

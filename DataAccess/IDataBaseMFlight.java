@@ -14,10 +14,15 @@ public interface IDataBaseMFlight {
 	public Customer getCustomer(int CostumerId);
 	public Plane getPlane(int planeId);
 	
-	void setFlight(int flightId, Date arrive, Date departure, Plane plane, Airport[] airport, String[] ToFrom, Double price, int[] costumerId);
-	void setAirport(int airportId, String city, String country, String name);
-	void setCustomer(int costumerId, String name, int Age, int SSN);
-	void setPlane(int planeId, String planeType, String seats);
+	public Flight[] getFlights(String from);
+	public Flight[] getFlights(String from, String to);
+	public Flight[] getFlights(String from, String to, String date);
+	
+	
+//	void setFlight(int flightId, Date arrive, Date departure, Plane plane, Airport[] airport, String[] ToFrom, Double price, int[] costumerId);
+//	void setAirport(int airportId, String city, String country, String name);
+//	void setCustomer(int costumerId, String name, int Age, int SSN);
+//	void setPlane(int planeId, String planeType, String seats);
 	
 	String orderFlight(String FlightId, String CustomerId);
 	

@@ -34,6 +34,42 @@ public class FlightSearch implements IFlightSearch{
 		}
 	}
 	
+
+	@Override
+	public Flight[] GetFlightsBy(String from) {
+		// TODO Auto-generated method stub
+		return GetFlightsBy(from, null, null);
+	}
+
+	@Override
+	public Flight[] GetFlightsBy(String from, String to) {
+		// TODO Auto-generated method stub
+		return GetFlightsBy(from, to, null);
+	}
+
+	@Override
+	public Flight[] GetFlightsBy(String from, String to, String date) {
+		// TODO Auto-generated method stub
+		
+		
+		if (to == null && date == null)
+		{
+			Flight[] resultFlights = manager.getFlights(from);
+		} 
+		else if (to == null)
+		{
+			Flight[] resultFlights = manager.getFlights(from, to);
+		}
+		else 
+		{
+			Flight[] resultFlights = manager.getFlights(from, to, date);
+		}
+		
+		
+		return null;
+	}
+
+	
 	@Override
 	public String OrderFlight(String costumerId, String flightId) {
 		// TODO Auto-generated method stub
@@ -53,42 +89,6 @@ public class FlightSearch implements IFlightSearch{
 
 	@Override
 	public Flight[] GetFlightsByCostumerId(int costumerId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int[] GetFlightsIds(Date time) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int[] GetFlightsIds(int price) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int[] GetFlightsIds(String destination) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int[] GetFlightsIds(Date time, int price) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int[] GetFlightsIds(Date time, int price, String destination) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int[] GetFlightsIds(Date time, int price, String destination, Airport airport) {
 		// TODO Auto-generated method stub
 		return null;
 	}
