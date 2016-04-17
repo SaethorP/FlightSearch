@@ -1,6 +1,7 @@
 package Model;
 
 import java.util.Date;
+import java.util.List;
 
 import Entities.Airport;
 import Entities.Customer;
@@ -11,9 +12,9 @@ public interface IFlightSearch {
 	public Flight[] GetFlightsById(String[] flightIds);
 	public Flight[] GetFlightsByCostumerId(int costumerId);
 	
-	public Flight[] GetFlightsBy(String from);
-	public Flight[] GetFlightsBy(String from, String to);
-	public Flight[] GetFlightsBy(String from, String to, String date);
+	public List<Flight> GetFlightsBy(String from);
+	public List<Flight> GetFlightsBy(String from, String to);
+	public List<Flight> GetFlightsBy(String from, String to, String date);
 	
 	
 //	public int[] GetFlightsIds(Date time );

@@ -1,6 +1,7 @@
 package DataAccess;
 
 import java.util.Date;
+import java.util.List;
 
 import Entities.Airport;
 import Entities.Customer;
@@ -11,19 +12,19 @@ public class MockDatabaseMFlight implements IDataBaseMFlight {
 	
 	
 	@Override
-	public Flight[] getFlights(String from) {
+	public List<Flight> getFlights(String from) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Flight[] getFlights(String from, String to) {
+	public List<Flight> getFlights(String from, String to) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Flight[] getFlights(String from, String to, String date) {
+	public List<Flight> getFlights(String from, String to, String date) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -43,7 +44,9 @@ public class MockDatabaseMFlight implements IDataBaseMFlight {
 			int[] customers = {1,2,3,4,5,6,7,8,9,10}; 
 			double price = 1000.00;
 			
-			Flight mockFlight = new Flight(flightId, departure, arrive, plane, airports, customers, price);
+			
+			// String departure, String to, String from, int emptyseats, double price
+			Flight mockFlight = new Flight();
 			
 			return mockFlight;
 		}

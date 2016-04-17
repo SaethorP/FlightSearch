@@ -1,6 +1,7 @@
 package Model;
 
 import java.util.Date;
+import java.util.List;
 
 import Entities.Airport;
 import Entities.Customer;
@@ -27,7 +28,8 @@ public class MockFlightSearch implements IFlightSearch {
 			int[] customers = {1,2,3,4,5,6,7,8,9,10}; 
 			double price = 1000.00;
 			
-			Flight mockFlight = new Flight(flightId, departure, arrive, plane, airports, customers, price);
+			// String departure, String to, String from, int emptyseats, double price
+			Flight mockFlight = new Flight();
 			
 			return mockFlight;
 		}
@@ -39,19 +41,19 @@ public class MockFlightSearch implements IFlightSearch {
 
 
 	@Override
-	public Flight[] GetFlightsBy(String from) {
+	public List<Flight> GetFlightsBy(String from) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Flight[] GetFlightsBy(String from, String to) {
+	public List<Flight> GetFlightsBy(String from, String to) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Flight[] GetFlightsBy(String from, String to, String date) {
+	public List<Flight> GetFlightsBy(String from, String to, String date) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -1,5 +1,6 @@
 package DataAccess;
 import java.util.Date;
+import java.util.List;
 
 import Entities.Airport;
 import Entities.Customer;
@@ -14,9 +15,9 @@ public interface IDataBaseMFlight {
 	public Customer getCustomer(int CostumerId);
 	public Plane getPlane(int planeId);
 	
-	public Flight[] getFlights(String from);
-	public Flight[] getFlights(String from, String to);
-	public Flight[] getFlights(String from, String to, String date);
+	public List<Flight> getFlights(String from);
+	public List<Flight> getFlights(String from, String to);
+	public List<Flight> getFlights(String from, String to, String date);
 	
 	
 //	void setFlight(int flightId, Date arrive, Date departure, Plane plane, Airport[] airport, String[] ToFrom, Double price, int[] costumerId);

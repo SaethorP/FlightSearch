@@ -1,6 +1,7 @@
 package DataAccess;
+import java.util.ArrayList;
 import java.util.Date;
-
+import java.util.List;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -16,9 +17,9 @@ import Entities.Plane;
 public class DatabaseMFlight implements IDataBaseMFlight {
 	
 	@Override
-	public Flight[] getFlights(String from) {
+	public List<Flight> getFlights(String from) {
 		// TODO Auto-generated method stub
-		
+		List<Flight> flights = new ArrayList();
 		//Class.forName("org.sqlite.JDBC");
 
 		   Connection connection = null;
@@ -29,8 +30,9 @@ public class DatabaseMFlight implements IDataBaseMFlight {
 
 		      Statement statement = connection.createStatement();
 		      statement.setQueryTimeout(30);  // set timeout to 30 sec.
-
-
+		      
+		      
+		      
 		      //statement.executeUpdate("UPDATE person SET name='Peter' WHERE id='1'");
 		      //statement.executeUpdate("DELETE FROM person WHERE id='1'");
 		      	String query = "SELECT * from Flights WHERE Fra = '" + from + "'";
@@ -38,12 +40,23 @@ public class DatabaseMFlight implements IDataBaseMFlight {
 		        ResultSet resultSet = statement.executeQuery(query);
 		        while(resultSet.next())
 		        {
+		        	int flightId = resultSet.getInt("Id");
+		        	String flightFrom = resultSet.getString("Fra");
+		        	String flightTo = resultSet.getString("Til");
+		        	String flightDate = resultSet.getString("Date");
+		        	String flightSeats = resultSet.getString("EmptySeats");
+		        	double flightPrice = 1000.00;
+		        	
+		        	Flight newFlight = new Flight(flightDate, flightTo, flightFrom, flightSeats, flightPrice);
+		        	
+		        	
+		        	flights.add(newFlight);
 		           // iterate & read the result set
-		           System.out.println("Id = " + resultSet.getInt("Id"));
-		           System.out.println("Date = " + resultSet.getString("Date"));
-		           System.out.println("From = " + resultSet.getString("Fra"));
-		           System.out.println("To = " + resultSet.getString("Til"));
-		           System.out.println("EmptySeats = " + resultSet.getString("EmptySeats"));
+//		           System.out.println("Id = " + resultSet.getInt("Id"));
+//		           System.out.println("Date = " + resultSet.getString("Date"));
+//		           System.out.println("From = " + resultSet.getString("Fra"));
+//		           System.out.println("To = " + resultSet.getString("Til"));
+//		           System.out.println("EmptySeats = " + resultSet.getString("EmptySeats"));
 
 		        }
 		       }
@@ -60,11 +73,11 @@ public class DatabaseMFlight implements IDataBaseMFlight {
 		   }
 		
 		
-		return null;
+		return flights;
 	}
 
 	@Override
-	public Flight[] getFlights(String from, String to) {
+	public List<Flight> getFlights(String from, String to) {
 		// TODO Auto-generated method stub
 		
 				//Class.forName("org.sqlite.JDBC");
@@ -111,7 +124,7 @@ public class DatabaseMFlight implements IDataBaseMFlight {
 	}
 
 	@Override
-	public Flight[] getFlights(String from, String to, String date) {
+	public List<Flight> getFlights(String from, String to, String date) {
 		// TODO Auto-generated method stub
 		
 				//Class.forName("org.sqlite.JDBC");

@@ -1,5 +1,7 @@
 package Model;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import DataAccess.IDataBaseMFlight;
 import Entities.Airport;
@@ -38,21 +40,22 @@ public class FlightSearch implements IFlightSearch{
 	
 
 	@Override
-	public Flight[] GetFlightsBy(String from) {
+	public List<Flight> GetFlightsBy(String from) {
 		// TODO Auto-generated method stub
 		return GetFlightsBy(from, null, null);
 	}
 
 	@Override
-	public Flight[] GetFlightsBy(String from, String to) {
+	public List<Flight> GetFlightsBy(String from, String to) {
 		// TODO Auto-generated method stub
 		return GetFlightsBy(from, to, null);
 	}
 
 	@Override
-	public Flight[] GetFlightsBy(String from, String to, String date) {
+	public List<Flight> GetFlightsBy(String from, String to, String date) {
 		// TODO Auto-generated method stub
 		
+		List<Flight> resultFlights = new ArrayList();
 		
 		if (to == null && date == null)
 		{
@@ -60,7 +63,7 @@ public class FlightSearch implements IFlightSearch{
 			
 			if (!check) throw new IllegalArgumentException("The argument is not legal.");
 			
-			Flight[] resultFlights = manager.getFlights(from);
+			resultFlights = manager.getFlights(from);
 		} 
 		else if (date == null)
 		{
@@ -68,15 +71,15 @@ public class FlightSearch implements IFlightSearch{
 			
 			if (!check) throw new IllegalArgumentException("The argument is not legal.");
 			
-			Flight[] resultFlights = manager.getFlights(from, to);
+			resultFlights = manager.getFlights(from, to);
 		}
 		else 
 		{
-			Flight[] resultFlights = manager.getFlights(from, to, date);
+			resultFlights = manager.getFlights(from, to, date);
 		}
 		
 		
-		return null;
+		return resultFlights;
 	}
 
 	
