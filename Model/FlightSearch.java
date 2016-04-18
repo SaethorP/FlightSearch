@@ -24,7 +24,7 @@ public class FlightSearch implements IFlightSearch{
 
 	
 	@Override
-	public Flight GetFlightById(String flightId) {
+	public Flight getFlightById(String flightId) {
 		
 		if (flightId.length() != 6 && isNumeric(flightId)){ return null; };
 		
@@ -40,19 +40,19 @@ public class FlightSearch implements IFlightSearch{
 	
 
 	@Override
-	public List<Flight> GetFlightsBy(String from) {
+	public List<Flight> getFlightsBy(String from) {
 		// TODO Auto-generated method stub
-		return GetFlightsBy(from, null, null);
+		return getFlightsBy(from, null, null);
 	}
 
 	@Override
-	public List<Flight> GetFlightsBy(String from, String to) {
+	public List<Flight> getFlightsBy(String from, String to) {
 		// TODO Auto-generated method stub
-		return GetFlightsBy(from, to, null);
+		return getFlightsBy(from, to, null);
 	}
 
 	@Override
-	public List<Flight> GetFlightsBy(String from, String to, String date) {
+	public List<Flight> getFlightsBy(String from, String to, String date) {
 		// TODO Auto-generated method stub
 		
 		List<Flight> resultFlights = new ArrayList();
@@ -84,43 +84,40 @@ public class FlightSearch implements IFlightSearch{
 
 	
 	@Override
-	public String OrderFlight(String costumerId, String flightId) {
+	public String orderFlight(Customer costumer, int flightId) {
 		// TODO Auto-generated method stub
-		if (flightId.length() != 6 || !isNumeric(flightId) || flightId == ""){ return null; };
-		if (costumerId.length() != 8 || !isNumeric(costumerId) || costumerId == "") { return null; };
 		
-		if(costumerId != null && flightId != null){return manager.orderFlight(flightId, costumerId);};
+		return manager.orderFlight(costumer, flightId);
+		
+	}
+
+	@Override
+	public Flight[] getFlightsById(String[] flightIds) {
 		
 		return null;
 	}
 
 	@Override
-	public Flight[] GetFlightsById(String[] flightIds) {
-		
-		return null;
-	}
-
-	@Override
-	public Flight[] GetFlightsByCostumerId(int costumerId) {
+	public Flight[] getFlightsByCostumerId(int costumerId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 
 	@Override
-	public void SeeMyFlights(Customer costumer) {
+	public void seeMyFlights(Customer costumer) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void CancelFlight(Customer costumer, Flight flight) {
+	public void cancelFlight(Customer costumer, Flight flight) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void EditFlight(Customer costumer, Flight flight, boolean extraLuggage) {
+	public void editFlight(Customer costumer, Flight flight, boolean extraLuggage) {
 		// TODO Auto-generated method stub
 		
 	}

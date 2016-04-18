@@ -8,14 +8,15 @@ import Entities.Customer;
 import Entities.Flight;
 
 public interface IFlightSearch {
-	public Flight 	GetFlightById(String flightId);
-	public Flight[] GetFlightsById(String[] flightIds);
-	public Flight[] GetFlightsByCostumerId(int costumerId);
+	public Flight 	getFlightById(String flightId);
+	public Flight[] getFlightsById(String[] flightIds);
+	public Flight[] getFlightsByCostumerId(int costumerId);
 	
-	public List<Flight> GetFlightsBy(String from);
-	public List<Flight> GetFlightsBy(String from, String to);
-	public List<Flight> GetFlightsBy(String from, String to, String date);
+	public List<Flight> getFlightsBy(String from);
+	public List<Flight> getFlightsBy(String from, String to);
+	public List<Flight> getFlightsBy(String from, String to, String date);
 	
+	String orderFlight(Customer costumer, int flightId);
 	
 //	public int[] GetFlightsIds(Date time );
 //	public int[] GetFlightsIds(int price );
@@ -25,8 +26,7 @@ public interface IFlightSearch {
 //	public int[] GetFlightsIds(Date time, int price, String destination);
 //	public int[] GetFlightsIds(Date time, int price, String destination, Airport airport);
 
-	String OrderFlight(String costumerId, String flightId);
-	void SeeMyFlights(Customer costumer);
-	void CancelFlight(Customer costumer, Flight flight);
-	void EditFlight(Customer costumer, Flight flight, boolean extraLuggage );
+	void seeMyFlights(Customer costumer);
+	void cancelFlight(Customer costumer, Flight flight);
+	void editFlight(Customer costumer, Flight flight, boolean extraLuggage );
 }

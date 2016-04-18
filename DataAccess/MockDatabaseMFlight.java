@@ -76,7 +76,7 @@ public class MockDatabaseMFlight implements IDataBaseMFlight {
 	}
 
 	@Override
-	public String orderFlight(String FlightId, String CustomerId) {
+	public String orderFlight(Customer customer, int FlightId) {
 		// TODO Auto-generated method stub
 		return "Success";
 	}	

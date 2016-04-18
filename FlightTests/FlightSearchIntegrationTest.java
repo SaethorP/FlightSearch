@@ -11,6 +11,7 @@ import org.junit.Test;
 import DataAccess.DatabaseMFlight;
 import DataAccess.IDataBaseMFlight;
 import DataAccess.MockDatabaseMFlight;
+import Entities.Customer;
 import Entities.Flight;
 import Model.FlightSearch;
 import Model.IFlightSearch;
@@ -35,13 +36,25 @@ public class FlightSearchIntegrationTest {
 	}
 	
 	@Test
-	public void getAllFlights() {
-		List<Flight> actualFlight = flightSearch.GetFlightsBy("Reykjavík");
+	public void getFlightsByCorrect_From() {
+		List<Flight> actualFlight = flightSearch.getFlightsBy("Reykjavík");
 		assertNotNull(actualFlight);
 	}
 	
 
-	
+	@Test
+	public void orderFlight()
+	{
+		Customer newCustomer = new Customer();
+		newCustomer.SetCostumerName("Haffi Haff");
+		newCustomer.SetCostumerId(102000);
+		newCustomer.SetCostumerAge("110");
+		newCustomer.SetCostumerSSN("1234567890");
+		int flightId = 1; 
+		
+		String result = flightSearch.orderFlight(newCustomer, flightId);
+		assertNotNull(result);
+	}
 
 
 }

@@ -33,75 +33,75 @@ public class FlightSearchTest {
 
 	@Test
 	public void getFlightById_ValidInput() {
-		Flight actualFlight = flightSearch.GetFlightById("123456");
+		Flight actualFlight = flightSearch.getFlightById("123456");
 		assertNotNull(actualFlight);
 	}
 
 	@Test
 	public void getFlightById_Invalid_ToLongInput() {
-		Flight actualFlight = flightSearch.GetFlightById("486489468498498498");
+		Flight actualFlight = flightSearch.getFlightById("486489468498498498");
 		assertEquals(null,actualFlight);
 	}
 	
 	@Test
 	public void getFlightById_Invalid_ToShortInput() {
-		Flight actualFlight = flightSearch.GetFlightById("486");
+		Flight actualFlight = flightSearch.getFlightById("486");
 		assertEquals(null,actualFlight);
 	}
 	
 	@Test
 	public void getFlightById_Invalid_EmptyString() {
-		Flight actualFlight = flightSearch.GetFlightById("");
+		Flight actualFlight = flightSearch.getFlightById("");
 		assertEquals(null,actualFlight);
 	}
 	
 	@Test
 	public void getFlightById_Invalid_CharacterInput() {
-		Flight actualFlight = flightSearch.GetFlightById("Prumpi");
+		Flight actualFlight = flightSearch.getFlightById("Prumpi");
 		assertEquals(null,actualFlight);
 	}
 	
-	@Test
-	public void orderFlight_Success_ValidInput(){
-		String successString = flightSearch.OrderFlight("03088822", "123456");
-		assertEquals("Success", successString);
-	}
-	
-	@Test
-	public void orderFlight_FAIL_CustosmerIsEmpty(){
-		String successString = flightSearch.OrderFlight("", "123456");
-		assertEquals(null, successString);
-	}
-	
-	@Test
-	public void orderFlight_FAIL_FlightIdIsEmpty(){
-		String successString = flightSearch.OrderFlight("03088822", "");
-		assertEquals(null, successString);
-	}
-	
-	@Test
-	public void orderFlight_FAIL_InvalidCostumerLenghtToLong(){
-		String successString = flightSearch.OrderFlight("03088822212121", "123456");
-		assertEquals(null, successString);
-	}
-	
-	@Test
-	public void orderFlight_FAIL_InvalidCostumerFlightIdLengthToLong(){
-		String successString = flightSearch.OrderFlight("03088822", "12345631321");
-		assertEquals(null, successString);
-	}
-	
-	@Test
-	public void orderFlight_FAIL_InvalidCostumerCustomerLengthToShort(){
-		String successString = flightSearch.OrderFlight("0308", "123456");
-		assertEquals(null, successString);
-	}
-	
-	@Test
-	public void orderFlight_FAIL_InvalidCostumerFlightIdLengthToShort(){
-		String successString = flightSearch.OrderFlight("03088822", "1234");
-		assertEquals(null, successString);
-	}
+//	@Test
+//	public void orderFlight_Success_ValidInput(){
+//		String successString = flightSearch.orderFlight("03088822", "123456");
+//		assertEquals("Success", successString);
+//	}
+//	
+//	@Test
+//	public void orderFlight_FAIL_CustosmerIsEmpty(){
+//		String successString = flightSearch.orderFlight("", "123456");
+//		assertEquals(null, successString);
+//	}
+//	
+//	@Test
+//	public void orderFlight_FAIL_FlightIdIsEmpty(){
+//		String successString = flightSearch.orderFlight("03088822", "");
+//		assertEquals(null, successString);
+//	}
+//	
+//	@Test
+//	public void orderFlight_FAIL_InvalidCostumerLenghtToLong(){
+//		String successString = flightSearch.orderFlight("03088822212121", "123456");
+//		assertEquals(null, successString);
+//	}
+//	
+//	@Test
+//	public void orderFlight_FAIL_InvalidCostumerFlightIdLengthToLong(){
+//		String successString = flightSearch.orderFlight("03088822", "12345631321");
+//		assertEquals(null, successString);
+//	}
+//	
+//	@Test
+//	public void orderFlight_FAIL_InvalidCostumerCustomerLengthToShort(){
+//		String successString = flightSearch.orderFlight("0308", "123456");
+//		assertEquals(null, successString);
+//	}
+//	
+//	@Test
+//	public void orderFlight_FAIL_InvalidCostumerFlightIdLengthToShort(){
+//		String successString = flightSearch.orderFlight("03088822", "1234");
+//		assertEquals(null, successString);
+//	}
 
 	
 	

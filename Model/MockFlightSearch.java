@@ -13,7 +13,7 @@ public class MockFlightSearch implements IFlightSearch {
 	Flight mockFlight = null; 
 	
 	@Override
-	public Flight GetFlightById(String flightId) {
+	public Flight getFlightById(String flightId) {
 		
 		if (flightId.length() != 6){ return null; };
 		
@@ -39,60 +39,61 @@ public class MockFlightSearch implements IFlightSearch {
 		}
 	}
 
-
 	@Override
-	public List<Flight> GetFlightsBy(String from) {
+	public Flight[] getFlightsById(String[] flightIds) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Flight> GetFlightsBy(String from, String to) {
+	public Flight[] getFlightsByCostumerId(int costumerId) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Flight> GetFlightsBy(String from, String to, String date) {
+	public List<Flight> getFlightsBy(String from) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public List<Flight> getFlightsBy(String from, String to) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Flight> getFlightsBy(String from, String to, String date) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String orderFlight(Customer costumer, int flightId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void seeMyFlights(Customer costumer) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void cancelFlight(Customer costumer, Flight flight) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void editFlight(Customer costumer, Flight flight, boolean extraLuggage) {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 	
-	@Override
-	public Flight[] GetFlightsById(String[] flightIds) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Flight[] GetFlightsByCostumerId(int costumerId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	@Override
-	public void SeeMyFlights(Customer costumer) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void CancelFlight(Customer costumer, Flight flight) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void EditFlight(Customer costumer, Flight flight, boolean extraLuggage) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public String OrderFlight(String costumer, String flight) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }

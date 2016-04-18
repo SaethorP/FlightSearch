@@ -16,6 +16,16 @@ import Entities.Plane;
 
 public class DatabaseMFlight implements IDataBaseMFlight {
 	
+	IDataBaseMFlight manager; 
+
+	public IDataBaseMFlight getManager() {
+		return manager;
+	}
+
+	public void setManager(IDataBaseMFlight manager) {
+		this.manager = manager;
+	}
+	
 	@Override
 	public List<Flight> getFlights(String from) {
 		// TODO Auto-generated method stub
@@ -44,20 +54,13 @@ public class DatabaseMFlight implements IDataBaseMFlight {
 		        	String flightFrom = resultSet.getString("Fra");
 		        	String flightTo = resultSet.getString("Til");
 		        	String flightDate = resultSet.getString("Date");
-		        	String flightSeats = resultSet.getString("EmptySeats");
+		        	int flightSeats = resultSet.getInt("EmptySeats");
 		        	double flightPrice = 1000.00;
 		        	
 		        	Flight newFlight = new Flight(flightDate, flightTo, flightFrom, flightSeats, flightPrice);
 		        	
 		        	
 		        	flights.add(newFlight);
-		           // iterate & read the result set
-//		           System.out.println("Id = " + resultSet.getInt("Id"));
-//		           System.out.println("Date = " + resultSet.getString("Date"));
-//		           System.out.println("From = " + resultSet.getString("Fra"));
-//		           System.out.println("To = " + resultSet.getString("Til"));
-//		           System.out.println("EmptySeats = " + resultSet.getString("EmptySeats"));
-
 		        }
 		       }
 
@@ -170,15 +173,57 @@ public class DatabaseMFlight implements IDataBaseMFlight {
 				
 				return null;
 	}
+	
+	@Override
+	public String orderFlight(Customer customer, int FlightId) {
+		
+		//Class.forName("org.sqlite.JDBC");
 
-	IDataBaseMFlight manager; 
+		   Connection connection = null;
+		   try
+		   {
+		      // create a database connection
+		      connection = DriverManager.getConnection("jdbc:sqlite:Flights.db");
 
-	public IDataBaseMFlight getManager() {
-		return manager;
-	}
+		      Statement statement = connection.createStatement();
+		      statement.setQueryTimeout(30);  // set timeout to 30 sec.
 
-	public void setManager(IDataBaseMFlight manager) {
-		this.manager = manager;
+
+		      //statement.executeUpdate("UPDATE person SET name='Peter' WHERE id='1'");
+		      //statement.executeUpdate("DELETE FROM person WHERE id='1'");
+		      	String query = "INSERT INTO Customers(customerId, name, age, ssn, flightId)" 
+		      			+ "VALUES (" + customer.GetCostumerId() + ",'" + customer.GetCostumerName() + "','" + customer.GetCostumerAge()+ "','" + customer.GetCostumerSSN()+ "'," + FlightId + " ) ";
+		      	
+		        statement.executeUpdate(query);
+		        
+		        
+		        int numberOfSeats = 0;
+		        query = "Select EmptySeats From Flights WHERE Id = "+ FlightId; 
+		        ResultSet resultSet = statement.executeQuery(query);
+		        while(resultSet.next())
+		        {
+		           // iterate & read the result set
+		           numberOfSeats = resultSet.getInt("EmptySeats") - 1;
+		        }
+		        
+		        statement.executeUpdate("UPDATE Flights SET EmptySeats='" + numberOfSeats +"' WHERE id='"+ FlightId +"'");
+		        
+		       }
+
+		  catch(SQLException e){  System.err.println(e.getMessage()); }       
+		   finally {         
+		         try {
+		               if(connection != null)
+		                  connection.close();
+		               }
+		         catch(SQLException e) {  // Use SQLException class instead.          
+		            System.err.println(e); 
+		          }
+		   }
+		
+		
+		return null;
+		
 	}
 	
 	@Override
@@ -212,11 +257,5 @@ public class DatabaseMFlight implements IDataBaseMFlight {
 		// TODO Auto-generated method stub
 		return manager.getPlane(planeId);
 	}	
-
-	@Override
-	public String orderFlight(String FlightId, String CustomerId) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 	
 }

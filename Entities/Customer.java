@@ -4,7 +4,7 @@ public class Customer {
 	
 	private int _costumerId;
 	private String _costumerName; 
-	private int _costumerAge;
+	private String _costumerAge;
 	private String _costumerSSN; //Social security number, 
 	
 	// Default constructor.
@@ -12,11 +12,11 @@ public class Customer {
 	{
 		_costumerId = 10;
 		_costumerName = "Jón Jónsson";
-		_costumerAge  = 25;
+		_costumerAge  = "25";
 		_costumerSSN  = "1234567890";
 	}
 	
-	public Customer(int id, String name, int age, String SSN)
+	public Customer(int id, String name, String age, String SSN)
 	{
 		_costumerId = id;
 		_costumerName = name;
@@ -35,7 +35,7 @@ public class Customer {
 		return _costumerId;
 	}
 	
-	public int GetCostumerAge()
+	public String GetCostumerAge()
 	{
 		return _costumerAge;
 	}
@@ -55,7 +55,7 @@ public class Customer {
 		_costumerId = id;
 	}
 	
-	public void SetCostumerAge(int age)
+	public void SetCostumerAge(String age)
 	{
 		_costumerAge = age;
 	}
