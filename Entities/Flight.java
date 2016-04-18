@@ -1,5 +1,4 @@
 package Entities;
-import java.util.Date;
 
 
 public class Flight {

@@ -1,9 +1,6 @@
 package Model;
 
-import java.util.Date;
 import java.util.List;
-
-import Entities.Airport;
 import Entities.Customer;
 import Entities.Flight;
 

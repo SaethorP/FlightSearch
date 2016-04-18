@@ -1,14 +1,11 @@
 package DataAccess;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Date;
-
 import Entities.Airport;
 import Entities.Customer;
 import Entities.Flight;
@@ -29,7 +26,7 @@ public class DatabaseMFlight implements IDataBaseMFlight {
 	@Override
 	public List<Flight> getFlights(String from) {
 		// TODO Auto-generated method stub
-		List<Flight> flights = new ArrayList();
+		List<Flight> flights = new ArrayList<Flight>();
 		//Class.forName("org.sqlite.JDBC");
 
 		   Connection connection = null;
@@ -50,7 +47,6 @@ public class DatabaseMFlight implements IDataBaseMFlight {
 		        ResultSet resultSet = statement.executeQuery(query);
 		        while(resultSet.next())
 		        {
-		        	int flightId = resultSet.getInt("Id");
 		        	String flightFrom = resultSet.getString("Fra");
 		        	String flightTo = resultSet.getString("Til");
 		        	String flightDate = resultSet.getString("Date");

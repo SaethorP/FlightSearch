@@ -1,14 +1,9 @@
 package Model;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-
 import DataAccess.IDataBaseMFlight;
-import Entities.Airport;
 import Entities.Customer;	
 import Entities.Flight;
-import Entities.Plane;
-import FlightTests.ObjectEqualMethods;
 import Model.Validate;
 
 public class FlightSearch implements IFlightSearch{
@@ -55,7 +50,7 @@ public class FlightSearch implements IFlightSearch{
 	public List<Flight> getFlightsBy(String from, String to, String date) {
 		// TODO Auto-generated method stub
 		
-		List<Flight> resultFlights = new ArrayList();
+		List<Flight> resultFlights = new ArrayList<Flight>();
 		
 		if (to == null && date == null)
 		{
